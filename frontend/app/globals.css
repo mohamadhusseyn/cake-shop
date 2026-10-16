@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-vazir: 'Vazirmatn', system-ui, -apple-system, sans-serif;
+  --bg-primary: #fdfbf7;
+  --bg-secondary: #faf6ee;
+  --primary-rose: #f43f5e;
+  --primary-amber: #f59e0b;
+  --text-primary: #2f1f15;
+  --text-secondary: #7a5a42;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-vazir);
+}
+
+html {
+  direction: rtl;
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  direction: rtl;
+  overflow-x: clip;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Custom Rose/Amber Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #faf6ee;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #fbbf24 0%, #fb7185 100%);
+  border-radius: 9999px;
+  border: 2px solid #faf6ee;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #f59e0b 0%, #f43f5e 100%);
+}
+
+/* Selection Color */
+::selection {
+  background-color: #fecdd3;
+  color: #881337;
+}
+
+/* Glassmorphism Styles */
+.glass {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 32px 0 rgba(148, 117, 65, 0.08);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(254, 226, 226, 0.6);
+  box-shadow: 0 10px 30px -5px rgba(225, 29, 72, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(251, 113, 133, 0.4);
+  box-shadow: 0 20px 40px -10px rgba(225, 29, 72, 0.15), 0 0 20px rgba(245, 158, 11, 0.1);
+}
+
+.glass-dark {
+  background: rgba(47, 31, 21, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.3);
+}
+
+.glass-button {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(254, 243, 199, 0.8));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(251, 191, 36, 0.4);
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.15);
+  transition: all 0.25s ease-in-out;
+}
+
+.glass-button:hover {
+  background: linear-gradient(135deg, #fff, #fee2e2);
+  border-color: rgba(244, 63, 94, 0.5);
+  box-shadow: 0 6px 20px rgba(244, 63, 94, 0.25);
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(206, 178, 126, 0.35);
+  transition: all 0.2s ease;
+}
+
+.glass-input:focus {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: #f43f5e;
+  box-shadow: 0 0 0 3px rgba(244, 63, 94, 0.15);
+  outline: none;
+}
+
+/* Floating Particle Animations */
+@keyframes particleFloat1 {
+  0% { transform: translate(0px, 0px) rotate(0deg); }
+  50% { transform: translate(15px, -25px) rotate(180deg); }
+  100% { transform: translate(0px, 0px) rotate(360deg); }
+}
+
+@keyframes particleFloat2 {
+  0% { transform: translate(0px, 0px) scale(1); }
+  50% { transform: translate(-20px, -35px) scale(1.15); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+@keyframes particleFloat3 {
+  0% { transform: translate(0px, 0px) rotate(0deg); }
+  50% { transform: translate(25px, 20px) rotate(-180deg); }
+  100% { transform: translate(0px, 0px) rotate(-360deg); }
+}
+
+.particle-1 {
+  animation: particleFloat1 12s infinite ease-in-out;
+}
+
+.particle-2 {
+  animation: particleFloat2 15s infinite ease-in-out;
+}
+
+.particle-3 {
+  animation: particleFloat3 18s infinite ease-in-out;
+}
+
+/* Warm Bakery Cake Gradients */
+.cake-gradient-hero {
+  background: radial-gradient(circle at 50% 20%, #fff7ed 0%, #ffedd5 30%, #ffe4e6 65%, #fdfbf7 100%);
+}
+
+.cake-gradient-gold {
+  background: linear-gradient(135deg, #f59e0b 0%, #ea580c 50%, #e11d48 100%);
+}
+
+.cake-gradient-rose {
+  background: linear-gradient(135deg, #fb7185 0%, #f43f5e 50%, #be123c 100%);
+}
+
+/* Shimmer Effect for Badges and Cards */
+.shimmer-text {
+  background: linear-gradient(90deg, #9f1239 0%, #f43f5e 30%, #fbbf24 50%, #f43f5e 70%, #9f1239 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 6s linear infinite;
+}
+
+/* Persian typography enhancements */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.font-vazir {
+  font-family: var(--font-vazir);
+}
